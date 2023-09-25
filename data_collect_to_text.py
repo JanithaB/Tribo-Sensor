@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 from collections import deque
 import time
 # Configure the serial port
-ser = serial.Serial('COM15', 9600)  # Replace 'COMX' with your Arduino's serial port
+ser = serial.Serial('COM7', 9600)  # Replace 'COMX' with your Arduino's serial port
 
 # Initialize data storage
 max_data_points = 1000  # Adjust as needed
@@ -24,7 +24,7 @@ for i in range(100):
     print("hold")
 #time.sleep(4)
 # Read and process the data
-Label=int(input("Enter your value"))
+Label=int(input("Enter your value: "))
 while(Label>0):
     x_data = []
     y1_data = []
@@ -37,7 +37,7 @@ while(Label>0):
     y_data =[]
 
 
-    #Label=int(input("Enter your value"))
+    #Label=int(input("Enter your value: "))
     for i in range(300):
         serial_line = ser.readline().decode('utf-8').strip()  # Read a line from serial
        # print(serial_line)
